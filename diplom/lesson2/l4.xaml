@@ -1,0 +1,165 @@
+﻿<Page x:Class="diplom.lesson2.l4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:diplom.lesson2"
+      mc:Ignorable="d" 
+     d:DesignHeight="{x:Static SystemParameters.PrimaryScreenHeight}" d:DesignWidth="{x:Static SystemParameters.PrimaryScreenWidth}"
+      Title="l4">
+
+    <Page.Resources>
+        <Style x:Key="ButtonText" TargetType="{x:Type Button}" >
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFDE464" Offset="0"/>
+                        <GradientStop Color="#FFFDE464" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontFamily" Value="/FastType;component/./#Flow Ext"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Padding="50 0" Height="80" Width="{TemplateBinding Width}" CornerRadius="5" BorderThickness="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"  BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF131736"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="123*"></ColumnDefinition>
+            <ColumnDefinition Width="74*"></ColumnDefinition>
+            <ColumnDefinition Width="123*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Canvas  Background="White" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="-33,0,0,-10"></Canvas>
+        <Image Source="/Image\049-superheroine.png" Grid.ColumnSpan="3" Margin="589,37,593,323" Grid.RowSpan="2"></Image>
+        <StackPanel Grid.Row="1" Margin="532,42,437,136" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <TextBlock FontSize="24" HorizontalAlignment ="Center" Width="1187" Height="130" Foreground="#FF686868" FontFamily="/diplom;component/Text/#a_FuturaRound" Margin="-109,0,-127,0"><Run Text="         Местоимение I (я) всегда пишется с заглавной буквы. Местоимения he и she обычно "/><LineBreak/><Run Text="относятся к людям, а местоимение it - к прочим одушевленным и неодушевленным предметам."/><LineBreak/><Run Text="             Местоимение they - общее для всех существительных во множественном числе."/><LineBreak/><Run Text="                                Местоимение you обозначает как «ты», так и «вы»."/></TextBlock>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <Border BorderBrush="#FF131736" x:Name="Border1" 
+            CornerRadius="50                " Margin="624,100,61,138" OpacityMask="White" Background="#FFFDE464" Opacity="0.7" Height="54" Grid.Column="2" Grid.Row="1">
+                <Button x:Name="one" ToolTip="Далее" VerticalAlignment="Top" HorizontalAlignment="Center"  Height="53"
+        Command="{Binding CloseWindow}" Width="91"  Background="{x:Null}" Foreground="{x:Null}" Margin="-30,0,-6,0" BorderBrush="{x:Null}" Click="one_Click">
+
+                    <StackPanel Orientation="Horizontal" Height="43" Width="135">
+                        <Image x:Name="image" Height="43" VerticalAlignment="Center" HorizontalAlignment="Center" Width="119">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Source" Value="/Icon\right-chevron.png" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="/Icon\right-chevron — копия.png" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </StackPanel>
+                </Button>
+            </Border>
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="-4,4,0,356" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Border BorderBrush="#FF131736" x:Name="Border2" 
+                CornerRadius="50                " Margin="624,100,61,138" OpacityMask="White" Background="#FFFDE464" Opacity="0.7" Height="54" Grid.Column="2" Grid.Row="1">
+                <Button x:Name="one2" ToolTip="Назад" VerticalAlignment="Top" HorizontalAlignment="Center"  Height="53"
+                    Command="{Binding CloseWindow}" Width="91"  Background="{x:Null}" Foreground="{x:Null}" Margin="-30,0,-6,0" BorderBrush="{x:Null}" Click="one2_Click">
+
+                    <StackPanel Orientation="Horizontal" Height="43" Width="135">
+                        <Image x:Name="image2" Height="43" VerticalAlignment="Center" HorizontalAlignment="Center" Width="119">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Source" Value="/Icon\right-chevron.png" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="/Icon\right-chevron — копия.png" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </StackPanel>
+                </Button>
+            </Border>
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="532,182,437,36" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <TextBlock FontSize="24" HorizontalAlignment ="Center" Width="640" Height="77" Text="  Прослушай и выбери правильный вариант:" Foreground="#FFFDE464" Margin="148,0,163,0" FontFamily="/diplom;component/Text/#a_FuturaRound"/>
+
+            <Button Content="Послушать" Style="{StaticResource ButtonText}" x:Name="one3"  VerticalAlignment="Top" HorizontalAlignment="Center"  Height="73"
+                     Width="282"    Margin="292,0,377,30"   FontFamily="/diplom;component/Text/#a_FuturaRound" Click="one3_Click" >
+
+
+            </Button>
+
+
+            <Viewbox Height="40" Margin="350,-20,517,0">
+                <RadioButton GroupName="test" x:Name="r1" RenderTransformOrigin="1.429,1.429" ></RadioButton>
+            </Viewbox>
+            <TextBlock Text="Me" FontSize="36" Margin="416,-45,457,0" RenderTransformOrigin="0.5,0.5" FontFamily="/diplom;component/Text/#a_FuturaRound"/>
+            <Viewbox Height="40" Margin="350,0,517,0">
+                <RadioButton GroupName="test" x:Name="r2" Width="15"></RadioButton>
+            </Viewbox>
+            <TextBlock Text="Him" FontSize="36" Margin="416,-45,457,0" FontFamily="/diplom;component/Text/#a_FuturaRound"></TextBlock>
+            <Viewbox Height="40" Margin="350,0,517,0">
+                <RadioButton GroupName="test" x:Name="r3"></RadioButton>
+            </Viewbox>
+            <TextBlock Text="Them" FontSize="36" Margin="416,-45,436,0" FontFamily="/diplom;component/Text/#a_FuturaRound"></TextBlock>
+
+            <Button Content="Проверка" x:Name="one1" Style="{StaticResource ButtonText}"  VerticalAlignment="Top" HorizontalAlignment="Center"  Height="73"
+                     Width="288"    Margin="292,0,371,0"   FontFamily="/diplom;component/Text/#a_FuturaRound" Click="one1_Click">
+
+
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

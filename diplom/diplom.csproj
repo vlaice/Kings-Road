@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{209E0DFE-5725-4644-B088-49DC9A620B20}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>diplom</RootNamespace>
+    <AssemblyName>diplom</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ClassPage\ApplicationContects.cs" />
+    <Compile Include="ClassPage\Class1.cs" />
+    <Compile Include="ClassPage\Class2.cs" />
+    <Compile Include="ClassPage\UserSession.cs" />
+    <Compile Include="Job\Job1.xaml.cs">
+      <DependentUpon>Job1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Job\Job2xaml.xaml.cs">
+      <DependentUpon>Job2xaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Job\Job3.xaml.cs">
+      <DependentUpon>Job3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Job\Job4.xaml.cs">
+      <DependentUpon>Job4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Job\Job5.xaml.cs">
+      <DependentUpon>Job5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson1\l1.xaml.cs">
+      <DependentUpon>l1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson1\l2.xaml.cs">
+      <DependentUpon>l2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson1\l3.xaml.cs">
+      <DependentUpon>l3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson1\l4.xaml.cs">
+      <DependentUpon>l4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson1\l5.xaml.cs">
+      <DependentUpon>l5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson1\l6.xaml.cs">
+      <DependentUpon>l6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="lesson2\l1.xaml.cs">
+      <DependentUpon>l1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="lesson2\l2.xaml.cs">
+      <DependentUpon>l2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="lesson2\l3.xaml.cs">
+      <DependentUpon>l3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="lesson2\l4.xaml.cs">
+      <DependentUpon>l4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="lesson2\l5.xaml.cs">
+      <DependentUpon>l5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="lesson2\l6.xaml.cs">
+      <DependentUpon>l6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson3\l1.xaml.cs">
+      <DependentUpon>l1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson3\l2.xaml.cs">
+      <DependentUpon>l2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson3\l3.xaml.cs">
+      <DependentUpon>l3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson3\l4.xaml.cs">
+      <DependentUpon>l4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson3\l5.xaml.cs">
+      <DependentUpon>l5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson3\l6.xaml.cs">
+      <DependentUpon>l6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson4\l1.xaml.cs">
+      <DependentUpon>l1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson4\l2.xaml.cs">
+      <DependentUpon>l2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson4\l3.xaml.cs">
+      <DependentUpon>l3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson4\l4.xaml.cs">
+      <DependentUpon>l4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson4\l5.xaml.cs">
+      <DependentUpon>l5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson4\l6.xaml.cs">
+      <DependentUpon>l6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login1.xaml.cs">
+      <DependentUpon>Login1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="str\Lg.xaml.cs">
+      <DependentUpon>Lg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="str\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="str\Pr.xaml.cs">
+      <DependentUpon>Pr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="str\Registr.xaml.cs">
+      <DependentUpon>Registr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="System\Drawing\Color.cs" />
+    <Page Include="Job\Job1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Job\Job2xaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Job\Job3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Job\Job4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Job\Job5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson1\l1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson1\l2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson1\l3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson1\l4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson1\l5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson1\l6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="lesson2\l1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="lesson2\l2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="lesson2\l3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="lesson2\l4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="lesson2\l5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="lesson2\l6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson3\l1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson3\l2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson3\l3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson3\l4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson3\l5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson3\l6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson4\l1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson4\l2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson4\l3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson4\l4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson4\l5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson4\l6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="str\Lg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="str\Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="str\Pr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="str\Registr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Text\a_FuturaRound Bold.ttf" />
+    <Resource Include="Text\Vogue Bold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\TMJ2QxG1sSo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\book %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\pngwing.com %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\pngegg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Без имени.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\ur1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\parchment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\parchment — копия.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\free-icon-dictionary-3898846.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\free-icon-dictionary-3898846 — копия.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\2974093ef7be0e9a437990bc4cab6a77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\037-alien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\037-alien — копия.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\ur1 — копия.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\049-superheroine — копия %282%29.png" />
+    <Resource Include="Image\049-superheroine — копия.png" />
+    <Resource Include="Image\049-superheroine.png" />
+    <Resource Include="Image\exam.png" />
+    <Resource Include="Image\paper-plane.png" />
+    <Resource Include="Image\laptop.png" />
+    <Resource Include="Icon\cancel — копия.png" />
+    <Resource Include="Icon\cancel.png" />
+    <Resource Include="Icon\minus %281%29 — копия.png" />
+    <Resource Include="Icon\minus %281%29.png" />
+    <Resource Include="Icon\stop3 — копия.png" />
+    <Resource Include="Icon\stop3.png" />
+    <Resource Include="Icon\Войти — копия.png" />
+    <Resource Include="Icon\Войти.png" />
+    <Resource Include="Icon\назад.png" />
+    <Resource Include="Icon\назад — копия.png" />
+    <Resource Include="Icon\Reg — копия.png" />
+    <Resource Include="Icon\Reg.png" />
+    <Resource Include="Icon\Voit — копия.png" />
+    <Resource Include="Icon\Voit.png" />
+    <Resource Include="Icon\Nach — копия.png" />
+    <Resource Include="Icon\Nach.png" />
+    <Resource Include="Image\050-police — копия %282%29.png" />
+    <Resource Include="Image\050-police — копия.png" />
+    <Resource Include="Image\050-police.png" />
+    <Resource Include="Image\Nachur — копия.png" />
+    <Resource Include="Image\Nachur.png" />
+    <Resource Include="Image\Poslush — копия.png" />
+    <Resource Include="Image\Poslush.png" />
+    <Resource Include="Image\Prov — копия.png" />
+    <Resource Include="Image\Prov.png" />
+    <Resource Include="Image\prod — копия.png" />
+    <Resource Include="Image\prod.png" />
+    <Resource Include="Image\009-cowboy — копия %282%29.png" />
+    <Resource Include="Image\009-cowboy — копия.png" />
+    <Resource Include="Image\009-cowboy.png" />
+    <Resource Include="Image\007-wrestler — копия %282%29.png" />
+    <Resource Include="Image\007-wrestler — копия.png" />
+    <Resource Include="Image\007-wrestler.png" />
+    <Resource Include="Image\032-catrina — копия %282%29.png" />
+    <Resource Include="Image\032-catrina — копия.png" />
+    <Resource Include="Image\032-catrina.png" />
+    <Resource Include="Image\017-nun — копия %282%29.png" />
+    <Resource Include="Image\017-nun — копия.png" />
+    <Resource Include="Image\017-nun.png" />
+    <Resource Include="Image\020-harlequin — копия %282%29.png" />
+    <Resource Include="Image\020-harlequin — копия.png" />
+    <Resource Include="Image\020-harlequin.png" />
+    <Resource Include="Image\030-troglodyte — копия %282%29.png" />
+    <Resource Include="Image\030-troglodyte — копия.png" />
+    <Resource Include="Image\030-troglodyte.png" />
+    <Resource Include="Image\042-ninja — копия %282%29.png" />
+    <Resource Include="Image\042-ninja — копия.png" />
+    <Resource Include="Image\042-ninja.png" />
+    <Resource Include="Image\048-robot — копия %282%29.png" />
+    <Resource Include="Image\048-robot — копия.png" />
+    <Resource Include="Image\048-robot.png" />
+    <Resource Include="Image\023-pirate — копия %282%29.png" />
+    <Resource Include="Image\023-pirate — копия.png" />
+    <Resource Include="Image\023-pirate.png" />
+    <Resource Include="Image\044-thief — копия %282%29.png" />
+    <Resource Include="Image\044-thief — копия.png" />
+    <Resource Include="Image\044-thief.png" />
+    <Resource Include="Image\034-ghost — копия %282%29.png" />
+    <Resource Include="Image\034-ghost — копия.png" />
+    <Resource Include="Image\034-ghost.png" />
+    <Resource Include="Image\003-pumpkin — копия %282%29.png" />
+    <Resource Include="Image\003-pumpkin — копия.png" />
+    <Resource Include="Image\003-pumpkin.png" />
+    <Resource Include="Image\018-mummy — копия %282%29.png" />
+    <Resource Include="Image\018-mummy — копия.png" />
+    <Resource Include="Image\018-mummy.png" />
+    <Resource Include="Image\038-doll — копия %282%29.png" />
+    <Resource Include="Image\038-doll — копия.png" />
+    <Resource Include="Image\038-doll.png" />
+    <Resource Include="Image\019-knight — копия %282%29.png" />
+    <Resource Include="Image\019-knight — копия.png" />
+    <Resource Include="Image\019-knight.png" />
+    <Resource Include="Image\021-princess — копия %282%29.png" />
+    <Resource Include="Image\021-princess — копия.png" />
+    <Resource Include="Image\021-princess.png" />
+    <Resource Include="Image\046-mime — копия %282%29.png" />
+    <Resource Include="Image\046-mime — копия.png" />
+    <Resource Include="Image\046-mime.png" />
+    <Resource Include="Image\027-wizard — копия %282%29.png" />
+    <Resource Include="Image\027-wizard — копия.png" />
+    <Resource Include="Image\027-wizard.png" />
+    <Resource Include="Image\012-fairy — копия %282%29.png" />
+    <Resource Include="Image\012-fairy — копия.png" />
+    <Resource Include="Image\012-fairy.png" />
+    <Resource Include="Image\001-scientist — копия %282%29.png" />
+    <Resource Include="Image\001-scientist — копия.png" />
+    <Resource Include="Image\001-scientist.png" />
+    <Resource Include="Image\016-viking — копия %282%29.png" />
+    <Resource Include="Image\016-viking — копия.png" />
+    <Resource Include="Image\016-viking.png" />
+    <Resource Include="Image\013-astronaut — копия %282%29.png" />
+    <Resource Include="Image\013-astronaut — копия.png" />
+    <Resource Include="Image\013-astronaut.png" />
+    <Resource Include="Icon\Gl.png" />
+    <Resource Include="Icon\Gl2.png" />
+    <Resource Include="Icon\Pr.png" />
+    <Resource Include="Icon\Pr2.png" />
+    <Resource Include="Icon\King.png" />
+    <Resource Include="Icon\King2.png" />
+    <Resource Include="Icon\user %281%29 — копия.png" />
+    <Resource Include="Icon\user %281%29.png" />
+    <Resource Include="Image\1600135520_23-p-fon-minimalizm-dlya-prezentatsii-27.jpg" />
+    <Resource Include="Image\89cc1fa5b7e27077e2855e853c8bdc93.png" />
+    <Resource Include="Image\gradient-1423121.jpg" />
+    <Resource Include="Image\pngkey.com-camera-logo-vector-png-7758597.png" />
+    <Resource Include="Icon\united-kingdom.png" />
+    <Resource Include="Image\medved.png" />
+    <Resource Include="Image\mytopkid.com-background-gacha-life-67.jpg" />
+    <Resource Include="Icon\big-ben.png" />
+    <Resource Include="Icon\user.png" />
+    <Resource Include="Icon\use.png" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="MP3\15782105855e119519ec419.wav" />
+    <Content Include="MP3\15782242585e11ca8264eb1.wav" />
+    <Content Include="MP3\15785695195e170f2f802f5.wav" />
+    <Content Include="MP3\1c8b668074590556f78498426b576fcd.wav" />
+    <Content Include="MP3\554-1-7-1619538253.wav" />
+    <Resource Include="Icon\right-chevron — копия.png" />
+    <Resource Include="Icon\right-chevron.png" />
+    <Content Include="MP3\554-1-1-1617650106.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

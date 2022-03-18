@@ -1,0 +1,832 @@
+﻿<Page x:Class="diplom.str.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:diplom.str"
+      mc:Ignorable="d" 
+      d:DesignHeight="{x:Static SystemParameters.PrimaryScreenHeight}" d:DesignWidth="{x:Static SystemParameters.PrimaryScreenWidth}"
+      Title="Page1" Loaded="Page_Loaded">
+    <Page.Resources>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"  BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF131736"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type ToolTip}">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding}" FontWeight="Bold" FontStyle="Normal" Foreground="#FF27A0CD" FontFamily="/diplom;component/Text/#a_FuturaRound" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--<Style TargetType="ToolTip">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Padding" Value="25"/>
+            <Setter Property="Background" Value="#FF27A0CD"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>-->
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="91*"></RowDefinition>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="120*"></RowDefinition>
+            <RowDefinition Height="120*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="123*"></ColumnDefinition>
+            <ColumnDefinition Width="122*"></ColumnDefinition>
+            <ColumnDefinition Width="58*"></ColumnDefinition>
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition Width="122*"></ColumnDefinition>
+            <ColumnDefinition Width="122*"></ColumnDefinition>
+            <ColumnDefinition Width="122*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/Image/2974093ef7be0e9a437990bc4cab6a77.png"  Grid.ColumnSpan="7"  Grid.RowSpan="4" OpacityMask="#FF007CB6" Margin="-160,-5,-147,-134"/>
+
+        <Button x:Name="b1" IsEnabled="True" ToolTip="Знакомство" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="110"
+            Command="{Binding CloseWindow}" Width="125"  Margin="0,26,291,0"  Background="{x:Null}" Grid.RowSpan="2" Click="Button_Click" Grid.Row="1" Grid.ColumnSpan="2" FontFamily="/diplom;component/Text/#a_FuturaRound">
+            <StackPanel Height="97" Width="125">
+
+                <Image x:Name="image_1" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Image\037-alien.png" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Icon\037-alien — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Image  Height="0" Width="37"/>
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b2" ToolTip="Употребление местоимений" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="110"
+            Command="{Binding CloseWindow}" Width="125"  Margin="0,129,274,0"  Background="{x:Null}" Grid.Row="2" Grid.ColumnSpan="2" Click="Button_Click_1" >
+            <StackPanel Height="97" Width="125">
+
+                <Image x:Name="image_2" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image\049-superheroine.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=b1,Path=IsEnabled}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image\049-superheroine — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=b2,Path=IsEnabled}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image\049-superheroine.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image\049-superheroine — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b3" ToolTip="Глаголы" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="110"
+            Command="{Binding CloseWindow}" Width="125"  Margin="0,240,151,0"  Background="{x:Null}" Grid.Column="1" Grid.RowSpan="2" Click="b3_Click" >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_3" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image\050-police.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image\050-police — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b3}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image\050-police.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image\050-police — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4" ToolTip="Present Simple" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="110"
+            Command="{Binding CloseWindow}" Width="125"  Margin="0,105,274,0"  Background="{x:Null}" Grid.ColumnSpan="2" Click="b4_Click"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_4" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/009-cowboy.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/009-cowboy — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b4}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/009-cowboy.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/009-cowboy — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,290,50,0"  Background="{x:Null}" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Click="b4_Copy_Click"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_5" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/007-wrestler.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/007-wrestler — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b5}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/007-wrestler.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/007-wrestler — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy1" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,239,183,0"  Background="{x:Null}" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_6" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/032-catrina.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/032-catrina — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b6}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/032-catrina.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/032-catrina — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy2" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,107,116,0"  Background="{x:Null}" Grid.Column="1" Grid.Row="3"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_7" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/017-nun.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/017-nun — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b7}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/017-nun.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/017-nun — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy3" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,36,60,0"  Background="{x:Null}" Grid.Column="6" Grid.Row="1" Grid.RowSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_8" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/020-harlequin.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/020-harlequin — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b8}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/020-harlequin.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/020-harlequin — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy4" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,224,95,0"  Background="{x:Null}" Grid.Column="5" Grid.RowSpan="3"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_9" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/030-troglodyte.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/030-troglodyte — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b10}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/030-troglodyte.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/030-troglodyte.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy5" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,0,84,0"  Background="{x:Null}" Grid.Column="5" Grid.Row="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_10" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/042-ninja.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/042-ninja — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b11}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/042-ninja.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/042-ninja — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy6" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,116,275,0"  Background="{x:Null}" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_11" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/048-robot.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/048-robot — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b12}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/048-robot.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/048-robot — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy7" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,181,170,0"  Background="{x:Null}" Grid.Column="6" Grid.Row="3"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_12" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/023-pirate.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/023-pirate — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b7}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/023-pirate.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/023-pirate — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy8" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,137,182,0"  Background="{x:Null}" Grid.Column="5" Grid.RowSpan="2" Grid.ColumnSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_13" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/044-thief.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/044-thief — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b9}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/044-thief.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/044-thief — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy9" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,252,63,0"  Background="{x:Null}" Grid.Column="5" Grid.Row="2" Grid.RowSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_14" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/034-ghost.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/034-ghost — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b13}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/034-ghost.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/034-ghost — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy10" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,325,242,0"  Background="{x:Null}" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_15" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/003-pumpkin.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/003-pumpkin — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b14}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/003-pumpkin.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/003-pumpkin — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy11" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,128,217,0"  Background="{x:Null}" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_16" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/018-mummy.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/018-mummy — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b15}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/018-mummy.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/018-mummy — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy12" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,21,120,0"  Background="{x:Null}" Grid.Column="4" Grid.Row="3"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_17" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/038-doll.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/038-doll — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b16}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/038-doll.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/038-doll — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy13" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,193,99,0"  Background="{x:Null}" Grid.Column="4" Grid.Row="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_18" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/019-knight.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/019-knight — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b17}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/019-knight.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/019-knight — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy14" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,152,272,0"  Background="{x:Null}" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_19" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/021-princess.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/021-princess — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b18}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/021-princess.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/021-princess — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy15" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,173,135,0"  Background="{x:Null}" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_20" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/046-mime.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/046-mime — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b19}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/046-mime.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/046-mime — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy16" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,15,300,0"  Background="{x:Null}" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_21" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/027-wizard.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/027-wizard — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b20}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/027-wizard.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/027-wizard — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy17" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,26,119,0"  Background="{x:Null}" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_22" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/012-fairy.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/012-fairy — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b21}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/012-fairy.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/012-fairy — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy18" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,174,0,0"  Background="{x:Null}" Grid.Column="2" Grid.RowSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_23" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/001-scientist.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/001-scientist — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b22}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/001-scientist.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/001-scientist — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy19" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,105,227,0"  Background="{x:Null}" Grid.Column="3" Grid.ColumnSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_24" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/016-viking.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/016-viking — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b23}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/016-viking.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/016-viking — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b4_Copy20" ToolTip="two" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="146"
+            Command="{Binding CloseWindow}" Width="149"  Margin="0,183,38,0"  Background="{x:Null}" Grid.Column="4" Grid.RowSpan="2"  >
+            <StackPanel Height="97" Width="125">
+                <Image x:Name="image_25" Height="99" Margin="10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+
+
+
+                            <Setter Property="Source" Value="/Image/013-astronaut.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b1}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/013-astronaut — копия (2).png" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=b24}" Value="True">
+
+                                    <Setter Property="Source" Value="/Image/013-astronaut.png" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Image/013-astronaut — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="b1_Copy"  IsEnabled="True" ToolTip="Профиль" VerticalAlignment="Top" HorizontalAlignment="Left"  Height="110"
+            Command="{Binding CloseWindow}"   Background="{x:Null}" Click="b1_Copy_Click" FontFamily="/diplom;component/Text/#a_FuturaRound" Width="112" >
+            <StackPanel Orientation="Horizontal">
+
+                <Image x:Name="image_26" Height="94" Margin="10,0,0,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Icon/user (1).png"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Icon/user (1) — копия.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Image  Height="0" Width="37"/>
+               
+            </StackPanel>
+        </Button>
+          <TextBlock x:Name="ExpTxbl" Text="0" FontSize="50" FontFamily="/diplom;component/Text/#a_FuturaRound" Height="74" Width="165" Margin="156,26,0,173"/>
+    </Grid>
+</Page>

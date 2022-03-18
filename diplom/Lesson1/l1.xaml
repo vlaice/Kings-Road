@@ -1,0 +1,108 @@
+﻿<Page x:Class="diplom.Lesson1.l1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:diplom.Lesson1"
+      mc:Ignorable="d" 
+      d:DesignHeight="{x:Static SystemParameters.PrimaryScreenHeight}" d:DesignWidth="{x:Static SystemParameters.PrimaryScreenWidth}"
+      Title="l1">
+
+    <Page.Resources>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"  BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF131736"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="ButtonText" TargetType="{x:Type Button}" >
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFA302" Offset="0"/>
+                        <GradientStop Color="#FFFFA302" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontFamily" Value="/FastType;component/./#Flow Ext"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Padding="50 0" Height="80" Width="{TemplateBinding Width}" CornerRadius="5" BorderThickness="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="123*"></ColumnDefinition>
+            <ColumnDefinition Width="74*"></ColumnDefinition>
+            <ColumnDefinition Width="123*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Canvas  Background="White" Grid.ColumnSpan="3" Grid.RowSpan="3"></Canvas>
+        <Image Source="/Image\037-alien.png" Grid.ColumnSpan="3" Margin="589,37,593,323" Grid.RowSpan="2"></Image>
+        <StackPanel Grid.Row="1" Margin="485,42,394,136" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <TextBlock FontSize="24" HorizontalAlignment="Left" Width="1028" Height="82" FontFamily="/diplom;component/Text/#a_FuturaRound" Foreground="#FFFFA302"><Run Text="Любое общение начинается со знакомства. И даже если ты еще ничего не знаешь"/><LineBreak/><Run Text="по-английски, есть шанс произвести хорошее впечатление! Главное - улыбайся! "/></TextBlock>
+            <TextBlock Text="Послушай, как сказать Привет и повтори!" FontSize="24" Margin="224,10,225,0" FontFamily="/diplom;component/Text/#a_FuturaRound"/>
+            <Button x:Name="one1" Content="Послушать" Style="{StaticResource ButtonText}"  VerticalAlignment="Top" HorizontalAlignment="Center"  Height="75"
+                     Width="296"    Margin="330,10,415,0"  Click="one_Click" FontFamily="/diplom;component/Text/#a_FuturaRound" />
+
+            <TextBlock Margin="427,20,483,0" Height="96" FontSize="24" FontFamily="/diplom;component/Text/#a_FuturaRound"><Run Text="- Hello! "/><LineBreak/><Run Text=" - Hi!"/></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <Border BorderBrush="#FF131736" x:Name="Border1" 
+            CornerRadius="50                " Margin="624,100,61,138" OpacityMask="White" Background="#FFFFA302" Height="54" Grid.Column="2" Grid.Row="1">
+                <Button x:Name="one" ToolTip="Далее" VerticalAlignment="Top" HorizontalAlignment="Center"  Height="53"
+                     Width="91"  Background="{x:Null}" Foreground="{x:Null}" Margin="-30,0,-6,0" BorderBrush="{x:Null}" Click="one_Click_1" >
+
+                    <StackPanel Orientation="Horizontal" Height="43" Width="135">
+                        <Image x:Name="image" Height="43" VerticalAlignment="Center" HorizontalAlignment="Center" Width="119">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Source" Value="/Icon\right-chevron.png" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="/Icon\right-chevron — копия.png" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </StackPanel>
+                </Button>
+            </Border>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
